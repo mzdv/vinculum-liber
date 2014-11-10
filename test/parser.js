@@ -5,7 +5,7 @@
 var parser = require("../libs/parser");
 
 describe("Parser", function() {
-    describe("#parse()", function() {
+    describe("#parse(String JSONString)", function() {
         it("Should return -1 when the JSON is invalid", function() {
             var fakeJSON = "{ fakejsonbonanza; jsonparty }";
 
