@@ -5,12 +5,12 @@
 var mutator = require("../libs/mutator");
 
 describe("Mutator", function() {
-    describe("#mutate(Object objectToMutate, Object mutation)", function() {
+    describe("#mutate(Gatherer gatherer, Object mutation)", function() {
         it("Should mutate the given object", function () {
-            var objectToMutate = "{ a: \"abc\", b: \"cde\" }";
+            var gatherer = "{ a: \"abc\", b: \"cde\" }";
             var mutation = "{ c: \"efg\" }";
 
-            mutator.mutate(objectToMutate, mutation).should.be.type(Object);
+            mutator.mutate(gatherer, mutation).should.be.type(Object);
         });
     });
 
