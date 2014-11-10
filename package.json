@@ -1,0 +1,11 @@
+{
+  "name": "vinculum-liber",
+  "version": "1.0.0",
+  "description": "Resource monitoring in Node.js",
+  "dependencies": {
+    "express": "4.*.*"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}

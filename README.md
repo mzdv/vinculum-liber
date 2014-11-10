@@ -1,3 +1,3 @@
 #vinculum-liber
 
-Resource monitoring solution using Node.js
+Resource monitoring in Node.js
