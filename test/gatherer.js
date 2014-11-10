@@ -8,7 +8,7 @@ var element = require("../libs/element");
 describe("Gatherer", function() {
     describe("#gather(Element element)", function() {
         it("Should return a continuous stream of data", function() {
-            var element = new Element("a");
+            var element = element.newElement("a", "a");
             gatherer.gather(element).should.be.type(Object);
         });
     });
@@ -18,7 +18,7 @@ describe("Gatherer", function() {
             var secundus = element.newElement("b", "b");
             var tertius = element.newElement("c", "c");
 
-            var arrayOfElementi = [primus, secundus, tertius];
+            var arrayOfElementi = [ primus, secundus, tertius ];
 
             gatherer.testElementi(arrayOfElementi).should.return(0);
         });
