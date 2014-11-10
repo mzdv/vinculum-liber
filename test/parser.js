@@ -2,21 +2,18 @@
  * Created by praetoriaen on 11/9/14.
  */
 
-var should = require("should");
 var parser = require("../libs/parser");
 
 describe("Parser", function() {
     describe("#parse()", function() {
         it("Should return -1 when the JSON is invalid", function() {
             var fakeJSON = "{ fakejsonbonanza; jsonparty }";
-            var parser = new Parser();
 
             parser.parse(fakeJSON).should.equal(-1);
         });
 
         it("Should return 0 when the JSON is valid", function() {
             var realJSON = "{ a: \"abc\"}";
-            var parser = new Parser();
 
             parser.parse(realJSON).should.equal(0);
         })
@@ -25,7 +22,6 @@ describe("Parser", function() {
     describe("#listResources()", function() {
         it("Should return the array of resources that are used for monitoring", function() {
             var arrayOfEvents = "{ resourceOne: \"interfaceOne\", resourceTwo: \"interaceTwo\", resourceThree: \"interfaceThree\"}";
-            var parser = new Parser();
 
             parser.resourceList(arrayOfEvents).should.equal(["resourceOne", "resourceTwo", "resourceThree"]);
         })
@@ -34,7 +30,6 @@ describe("Parser", function() {
     describe("#listElementi()", function() {
         it("Should return the array of elementi that are used for monitoring", function() {
             var arrayOfInterfaces = "{ resourceOne: \"interfaceOne\", resourceTwo: \"interaceTwo\", resourceThree: \"interfaceThree\"}";
-            var parser = new Parser();
 
             parser.listInterfaces(arrayOfInterfaces).should.equal(["interfaceOne", "interfaceTwo", "interfaceThree"]);
         });
