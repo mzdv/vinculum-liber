@@ -1,7 +1,7 @@
 /**
  * Created by praetoriaen on 11/10/14.
  */
-var element = require("../libs/element");
+var Element = require("../libs/element");
 
 describe("Element", function() {
     describe("#newElement(String callsign, String path)", function() {
@@ -9,7 +9,7 @@ describe("Element", function() {
             var callsign = "a";
             var path = "a";
 
-            var testElement = element.newElement(callsign, path);
+            var testElement = new Element(callsign, path);
 
             testElement.getCallsign().should.equal("a");
             testElement.getPath().should.equal("a");
