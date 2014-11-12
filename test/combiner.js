@@ -12,8 +12,9 @@ var logger = require("../libs/logger");
 describe("Combiner", function() {
     describe("#combine(Parser parser, Gatherer gatherer, Mutator mutator, Logger logger)", function() {
         it("Should return JSON which is an array of other JSONs", function() {
+            var testCombiner = new combiner();
 
-            combiner.combine(parser, gatherer, mutator, logger).should.be.type(Object);
+            testCombiner.combine(parser, gatherer, mutator, logger).should.be.type(Object);
         });
     });
 });

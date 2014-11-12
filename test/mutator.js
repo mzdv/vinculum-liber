@@ -9,14 +9,17 @@ describe("Mutator", function() {
         it("Should mutate the given object", function () {
             var gatherer = "{ a: \"abc\", b: \"cde\" }";
             var mutation = "{ c: \"efg\" }";
+            var testMutator = new mutator();
 
-            mutator.mutate(gatherer, mutation).should.be.type(Object);
+            testMutator.mutate(gatherer, mutation).should.be.type(Object);
         });
     });
 
     describe("#passThrough()", function() {
             it("Should do nothing", function() {
-                mutator.passThrough().should.return(0);
+                var testMutator = new mutator();
+
+                testMutator.passThrough().should.return(0);
             });
         });
 });
