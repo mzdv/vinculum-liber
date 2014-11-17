@@ -15,4 +15,9 @@ describe("Element", function() {
             testElement.getPath().should.equal("a");
         });
     });
+    describe("#createVault()", function() {
+        it("Should return 0 on successful elementi.json creation", function() {
+            Element.createVault.should.return(0);
+        })
+    })
 });
