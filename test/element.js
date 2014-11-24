@@ -12,8 +12,8 @@ describe("Element", function() {
 
             var testElement = new element(callsign, path);
 
-            testElement.callsign.should.equal(callsign);
-            testElement.path.should.equal(path);
+            testElement.getCallsign().should.equal(callsign);
+            testElement.getPath().should.equal(path);
 
         });
     });

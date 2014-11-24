@@ -8,4 +8,12 @@ var element = function(callsign, path) {
     this.path = path;
 };
 
+element.prototype.getCallsign = function() {
+    return this.callsign;
+};
+
+element.path.getPath = function() {
+    return this.path;
+};
+
 module.exports = element;

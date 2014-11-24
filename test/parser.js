@@ -17,16 +17,22 @@ describe("Parser", function() {
 
             testParser.parse().should.equal(0);
         });
-        it("Should return the parsed data from elementum.json", function() {
+        it("Should return the raw data from elementum.json", function() {
+            var testParser = new parser("elementum.json");
+            testParser.parse();
 
-            parser.parse().should.equal({
-                "name": "elementum.json test file",
-                "description": "elementum.json test file",
-                "element_callsign_one": "path_to_element",
-                "element_callsign_two": "path_to_element",
-                "element_callsign_three": "path_to_element",
-                "element_callsign_four": "path_to_element"
-            });
+            testParser.getData().should.equal('{\n  "name": "elementum.json test file",\n  ' +
+                                                    '"description": "elementum.json test file",\n  ' +
+                                                    '"element_callsign_one": "path_to_element",\n  ' +
+                                                    '"element_callsign_two": "path_to_element",\n  ' +
+                                                    '"element_callsign_three": "path_to_element",\n  ' +
+                                                    '"element_callsign_four": "path_to_element"\n}');
+        });
+        it("Should return the parsed data from elementum.json", function() {
+            var testParser = new parser("elementum.json");
+            testParser.parse();
+
+            testParser.parse().getParsedData().name.should.equal("elementum.json test file");
         });
     });
 

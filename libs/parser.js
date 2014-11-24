@@ -5,17 +5,22 @@ var fs = require("fs");
 
 
 var parser = function Parser(path) {
-        this.path = path;
+    this.path = path;
+    this.data = null;
 };
 
 parser.prototype.parse = function() {
     try {
-            fs.readFileSync(this.path);
+        this.data = fs.readFileSync(this.path).toString();
 
-            return 0;
-        } catch(e) {
-            return -1;
-        }
+    } catch(e) {
+        return -1;
+    }
+    return 0;
+};
+
+parser.prototype.getData = function() {
+    return this.data;
 };
 
 module.exports = parser;
