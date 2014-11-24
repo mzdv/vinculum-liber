@@ -5,20 +5,29 @@
 var parser = require("../libs/parser");
 
 describe("Parser", function() {
-    describe("#parse(String JSONString)", function() {
-        it("Should return -1 when the JSON is invalid", function() {
-            var fakeJSON = "dridgers";
-            var testParser = new parser();
+    describe("#parse()", function() {
+        it("Should return -1 when the elementum.json is invalid", function() {
+            var testParser = new parser("dummyfile");
 
-            testParser.parse(fakeJSON).should.equal(-1);
+            testParser.parse().should.equal(-1);
         });
 
-        it("Should return 0 when the JSON is valid", function() {
-            var realJSON = "{ a: \"abc\"}";
-            var testParser = new parser();
+        it("Should return 0 when the elementum.json is valid", function() {
+            var testParser = new parser("elementum.json");
 
-            testParser.parse(realJSON).should.equal(0);
-        })
+            testParser.parse().should.equal(0);
+        });
+        it("Should return the parsed data from elementum.json", function() {
+
+            parser.parse().should.equal({
+                "name": "elementum.json test file",
+                "description": "elementum.json test file",
+                "element_callsign_one": "path_to_element",
+                "element_callsign_two": "path_to_element",
+                "element_callsign_three": "path_to_element",
+                "element_callsign_four": "path_to_element"
+            });
+        });
     });
 
     describe("#listResources()", function() {

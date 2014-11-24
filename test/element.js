@@ -10,7 +10,7 @@ describe("Element", function() {
             var callsign = "a";
             var path = "a";
 
-            var testElement = new element.newElement(callsign, path);
+            var testElement = new element(callsign, path);
 
             testElement.callsign.should.equal(callsign);
             testElement.path.should.equal(path);
