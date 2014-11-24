@@ -1,7 +1,7 @@
 /**
  * Created by praetoriaen on 11/10/14.
  */
-var Element = require("../libs/element");
+var element = require("../libs/element");
 
 describe("Element", function() {
     describe("#newElement(String callsign, String path)", function() {
@@ -10,16 +10,11 @@ describe("Element", function() {
             var callsign = "a";
             var path = "a";
 
-            var testElement = new Element.newElement(callsign, path);
+            var testElement = new element.newElement(callsign, path);
 
             testElement.callsign.should.equal(callsign);
             testElement.path.should.equal(path);
 
         });
     });
-    describe("#createVault()", function() {
-        it("Should return 0 on successful elementi.json creation", function() {
-            Element.createVault().should.be(0);
-        })
-    })
 });
