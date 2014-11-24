@@ -6,6 +6,7 @@
     "express": "4.*.*"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "expect": "*"
   }
 }
