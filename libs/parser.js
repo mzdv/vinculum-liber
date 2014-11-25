@@ -11,7 +11,7 @@ var parser = function Parser(path) {
 parser.prototype.parse = function () {
     try {
         this.data = fs.readFileSync(this.path).toString();
-        this.parsedData = JSON.parse(this.data);
+        this.parsedData = JSON.parse(this.data );
     } catch (e) {
         return -1;
     }
