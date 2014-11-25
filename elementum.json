@@ -1,8 +1,10 @@
 {
   "name": "elementum.json test file",
   "description": "elementum.json test file",
-  "element_callsign_one": "path_to_element",
-  "element_callsign_two": "path_to_element",
-  "element_callsign_three": "path_to_element",
-  "element_callsign_four": "path_to_element"
+  "elements": {
+    "element_callsign_one": "path_to_element",
+    "element_callsign_two": "path_to_element",
+    "element_callsign_three": "path_to_element",
+    "element_callsign_four": "path_to_element"
+  }
 }

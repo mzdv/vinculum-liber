@@ -5,12 +5,10 @@ var fs = require("fs");
 
 
 var parser = function Parser(path) {
-    "use strict";
     this.path = path;
 };
 
 parser.prototype.parse = function () {
-    "use strict";
     try {
         this.data = fs.readFileSync(this.path).toString();
         this.parsedData = JSON.parse(this.data);
@@ -20,13 +18,18 @@ parser.prototype.parse = function () {
     return 0;
 };
 
+parser.prototype.setResourceList = function() {
+    //TO-DO
+};
+parser.prototype.getResourceList = function() {
+    return this.resourceList;
+};
+
 parser.prototype.getData = function () {
-    "use strict";
     return this.data;
 };
 
 parser.prototype.getParsedData = function () {
-    "use strict";
     return this.parsedData;
 };
 
