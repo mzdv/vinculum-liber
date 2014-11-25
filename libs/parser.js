@@ -5,22 +5,29 @@ var fs = require("fs");
 
 
 var parser = function Parser(path) {
+    "use strict";
     this.path = path;
-    this.data = null;
 };
 
-parser.prototype.parse = function() {
+parser.prototype.parse = function () {
+    "use strict";
     try {
         this.data = fs.readFileSync(this.path).toString();
-
-    } catch(e) {
+        this.parsedData = JSON.parse(this.data);
+    } catch (e) {
         return -1;
     }
     return 0;
 };
 
-parser.prototype.getData = function() {
+parser.prototype.getData = function () {
+    "use strict";
     return this.data;
+};
+
+parser.prototype.getParsedData = function () {
+    "use strict";
+    return this.parsedData;
 };
 
 module.exports = parser;

@@ -2,7 +2,6 @@
  * Created by praetoriaen on 11/10/14.
  */
 
-
 var element = function(callsign, path) {
     this.callsign = callsign;
     this.path = path;
@@ -12,7 +11,7 @@ element.prototype.getCallsign = function() {
     return this.callsign;
 };
 
-element.path.getPath = function() {
+element.prototype.getPath = function () {
     return this.path;
 };
 
