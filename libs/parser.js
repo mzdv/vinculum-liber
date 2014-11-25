@@ -18,12 +18,12 @@ parser.prototype.parse = function () {
     return 0;
 };
 
-parser.prototype.setResourceList = function() {
-    //TO-DO
-};
-parser.prototype.getResourceList = function() {
-    return this.resourceList;
-};
+//parser.prototype.setResourceList = function() {
+//    //TO-DO
+//};
+//parser.prototype.getResourceList = function() {
+//    return this.resourceList;
+//};
 
 parser.prototype.getData = function () {
     return this.data;
