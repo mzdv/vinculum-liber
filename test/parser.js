@@ -21,7 +21,7 @@ describe("Parser", function () {
             var testParser = new Parser("elementum.json");
             testParser.parse();
 
-            testParser.getData().should.equal("{\n  \"name\": \"elementum.json test file\",\n  \"description\": \"elementum.json test file\",\n  \"elements\": {\n    \"element_callsign_one\": \"path_to_element\",\n    \"element_callsign_two\": \"path_to_element\",\n    \"element_callsign_three\": \"path_to_element\",\n    \"element_callsign_four\": \"path_to_element\"\n  }\n}");
+            testParser.getData().should.equal("{\n  \"name\": \"elementum.json test file\",\n  \"description\": \"elementum.json test file\",\n  \"elements\": [\n    {\n      \"callsign\": \"callsign1\",\n      \"path\": \"path_to_element\"\n    },\n    {\n      \"callsign\": \"callsign2\",\n      \"path\": \"path_to_element\"\n    },\n    {\n      \"callsign\": \"callsign3\",\n      \"path\": \"path_to_element\"\n    }\n  ]\n}");
         });
         it("Should return the parsed data from elementum.json", function () {
             var testParser = new Parser("elementum.json");
@@ -33,10 +33,10 @@ describe("Parser", function () {
 
     describe("#listResources()", function () {
         it("Should return the array of resources that are used for monitoring", function () {
-            var arrayOfEvents = "{ resourceOne: \"interfaceOne\", resourceTwo: \"interaceTwo\", resourceThree: \"interfaceThree\"}";
-            var testParser = new Parser();
+            var testParser = new Parser("elementum.json");
+            testParser.parse();
 
-            testParser.resourceList(arrayOfEvents).should.equal(["resourceOne", "resourceTwo", "resourceThree"]);
+            testParser.getResourceList().should.equal(["resourceOne", "resourceTwo", "resourceThree"]);
         })
     });
 
