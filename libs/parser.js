@@ -6,24 +6,29 @@ var fs = require("fs");
 
 var parser = function Parser(path) {
     this.path = path;
+    this.resources = [];
 };
 
+parser.prototype.getResourceList = function() {
+    return this.resources;
+};
+
+parser.prototype.setResourceList = function(parsedData) {
+
+    for(var i = 0; i < parsedData.elements.length; i++) {
+        this.resources.push(parsedData.elements[i].callsign + '/' + parsedData.elements[i].port);
+    }
+};
 parser.prototype.parse = function () {
     try {
         this.data = fs.readFileSync(this.path).toString();
         this.parsedData = JSON.parse(this.data);
-
+        this.setResourceList(this.parsedData);
+        //this.setResourceList(this.parsedData);
     } catch (e) {
         return -1;
     }
     return 0;
-};
-
-//parser.prototype.setResourceList = function() {
-//    //TO-DO
-//};
-parser.prototype.getResourceList = function() {
-    return this.resourceList;
 };
 
 parser.prototype.getData = function () {

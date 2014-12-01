@@ -36,7 +36,7 @@ describe("Parser", function () {
             var testParser = new Parser("elementum.json");
             testParser.parse();
 
-            testParser.getResourceList().should.equal(["resourceOne", "resourceTwo", "resourceThree"]);
+            testParser.getResourceList().should.equal(["callsign1/13371", "callsign2/13372", "callsign3/13373"]);
         })
     });
 
