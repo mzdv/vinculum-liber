@@ -3,7 +3,6 @@
  */
 var fs = require("fs");
 
-
 var parser = function Parser(path) {
     this.path = path;
     this.resources = [];
@@ -19,17 +18,6 @@ parser.prototype.setResourceList = function(parsedData) {
         this.resources.push(parsedData.elements[i].callsign + '/' + parsedData.elements[i].port);
     }
 };
-parser.prototype.parse = function () {
-    try {
-        this.data = fs.readFileSync(this.path).toString();
-        this.parsedData = JSON.parse(this.data);
-        this.setResourceList(this.parsedData);
-        //this.setResourceList(this.parsedData);
-    } catch (e) {
-        return -1;
-    }
-    return 0;
-};
 
 parser.prototype.getData = function () {
     return this.data;
@@ -37,6 +25,18 @@ parser.prototype.getData = function () {
 
 parser.prototype.getParsedData = function () {
     return this.parsedData;
+};
+
+parser.prototype.parse = function () {
+    try {
+        this.data = fs.readFileSync(this.path).toString();
+        this.parsedData = JSON.parse(this.data);
+        this.setResourceList(this.parsedData);
+
+    } catch (e) {
+        return -1;
+    }
+    return 0;
 };
 
 module.exports = parser;
