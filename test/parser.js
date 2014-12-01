@@ -36,16 +36,11 @@ describe("Parser", function () {
             var testParser = new Parser("elementum.json");
             testParser.parse();
 
-            testParser.getResourceList().should.equal(["callsign1/13371", "callsign2/13372", "callsign3/13373"]);
-        })
-    });
-
-    describe("#listElementi()", function () {
-        it("Should return the array of elementi that are used for monitoring", function () {
-            var arrayOfInterfaces = "{ resourceOne: \"interfaceOne\", resourceTwo: \"interaceTwo\", resourceThree: \"interfaceThree\"}";
-            var testParser = new Parser();
-
-            testParser.listInterfaces(arrayOfInterfaces).should.equal(["interfaceOne", "interfaceTwo", "interfaceThree"]);
+            testParser.getResourceList().should.equal([
+                "callsign1/13371",
+                "callsign2/13372",
+                "callsign3/13373"
+            ]);
         });
-    })
+    });
 });
