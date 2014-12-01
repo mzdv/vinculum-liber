@@ -5,7 +5,7 @@
 var mutator = require("../libs/mutator");
 
 describe("Mutator", function() {
-    describe("#mutate(Gatherer gatherer, Object mutation)", function() {
+    describe("#mutate(Gatherer Gatherer, Object mutation)", function() {
         it("Should mutate the given object", function () {
             var gatherer = "{ a: \"abc\", b: \"cde\" }";
             var mutation = "{ c: \"efg\" }";
