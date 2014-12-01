@@ -4,15 +4,15 @@
   "elements": [
     {
       "callsign": "callsign1",
-      "path": "path_to_element"
+      "port": "13371"
     },
     {
       "callsign": "callsign2",
-      "path": "path_to_element"
+      "port": "13372"
     },
     {
       "callsign": "callsign3",
-      "path": "path_to_element"
+      "port": "13373"
     }
   ]
 }

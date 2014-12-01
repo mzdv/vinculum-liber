@@ -21,7 +21,7 @@ describe("Parser", function () {
             var testParser = new Parser("elementum.json");
             testParser.parse();
 
-            testParser.getData().should.equal("{\n  \"name\": \"elementum.json test file\",\n  \"description\": \"elementum.json test file\",\n  \"elements\": [\n    {\n      \"callsign\": \"callsign1\",\n      \"path\": \"path_to_element\"\n    },\n    {\n      \"callsign\": \"callsign2\",\n      \"path\": \"path_to_element\"\n    },\n    {\n      \"callsign\": \"callsign3\",\n      \"path\": \"path_to_element\"\n    }\n  ]\n}");
+            testParser.getData().should.equal("{\n  \"name\": \"elementum.json test file\",\n  \"description\": \"elementum.json test file\",\n  \"elements\": [\n    {\n      \"callsign\": \"callsign1\",\n      \"port\": \"13371\"\n    },\n    {\n      \"callsign\": \"callsign2\",\n      \"port\": \"13372\"\n    },\n    {\n      \"callsign\": \"callsign3\",\n      \"port\": \"13373\"\n    }\n  ]\n}");
         });
         it("Should return the parsed data from elementum.json", function () {
             var testParser = new Parser("elementum.json");

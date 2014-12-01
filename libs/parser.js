@@ -13,11 +13,6 @@ parser.prototype.parse = function () {
         this.data = fs.readFileSync(this.path).toString();
         this.parsedData = JSON.parse(this.data);
 
-        //var resourceList = [];
-        //for(var i = 0; i < this.parsedData.elements.length; i++) {
-        //    this.resourceList[i] = (this.parsedData.elements[i].callsign);
-        //}
-        //this.resourceList = resourceList;
     } catch (e) {
         return -1;
     }
