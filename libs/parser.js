@@ -2,6 +2,7 @@
  * Created by praetoriaen on 11/9/14.
  */
 var fs = require("fs");
+var _ = require("lodash");
 
 var parser = function Parser(path) {
     this.path = path;
@@ -13,10 +14,9 @@ parser.prototype.getResourceList = function() {
 };
 
 parser.prototype.setResourceList = function(parsedData) {
-
-    for(var i = 0; i < parsedData.elements.length; i++) {
-        this.resources.push(parsedData.elements[i].callsign + '/' + parsedData.elements[i].port);
-    }
+    this.resources = _.map(parsedData.elements, function(element) {
+        return element.callsign + '/' + element.port;
+    });
 };
 
 parser.prototype.getData = function () {
