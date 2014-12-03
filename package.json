@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Resource monitoring in Node.js",
   "dependencies": {
-    "express": "4.*.*"
+    "express": "4.*.*",
+    "lodash": "*"
   },
   "devDependencies": {
     "mocha": "*",
-    "expect": "*",
-    "lodash": "*"
+    "expect": "*"
   }
 }
