@@ -2,24 +2,27 @@
  * Created by praetoriaen on 11/9/14.
  */
 
-var mutator = require("../libs/mutator");
+var Mutator = require("../libs/mutator");   //more thorough explanation in mutator.js about the general conception
 
 describe("Mutator", function() {
-    describe("#mutate(Gatherer Gatherer, Object mutation)", function() {
-        it("Should mutate the given object", function () {
-            var gatherer = "{ a: \"abc\", b: \"cde\" }";
-            var mutation = "{ c: \"efg\" }";
-            var testMutator = new mutator();
+    describe("#additionMutate(String, String, delimeter)", function() {
+        it("Should mutate the given object by addition", function () {
+            var gathered = "Gathered text";
+            var mutation = "Text that will be added";
+            var delimeter = ' ';
+            var additionMutator = new Mutator(gathered, mutation);
 
-            testMutator.mutate(gatherer, mutation).should.be.type(Object);
+            additionMutator.additionMutate(delimeter).should.equal("Gathered text Text that will be added");
         });
     });
 
     describe("#passThrough()", function() {
             it("Should do nothing", function() {
-                var testMutator = new mutator();
+                var gathered = "Sample gatherer data";
+                var mutation = "Text that will used for mutation";
+                var passThroughMutator = new Mutator(gathered, mutation);
 
-                testMutator.passThrough().should.return(0);
+                passThroughMutator.passThrough().should.equal("Sample gatherer data");
             });
         });
 });
