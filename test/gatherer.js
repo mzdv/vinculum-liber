@@ -39,7 +39,7 @@ describe("Gatherer", function() {
 
             var testGatherer = new Gatherer();
 
-            testGatherer.testElementi(parser.getParsedData()).should.return(1);
+            testGatherer.testElementi(parser.getParsedData()).should.equal(1);
         });
     });
 });

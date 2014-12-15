@@ -1,6 +1,5 @@
 {
   "name": "elementumEmpty",
   "description": "elementum.json test file (empty)",
-  "elements": [
-  ]
+  "elements": []
 }
