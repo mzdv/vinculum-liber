@@ -2,24 +2,26 @@
  * Created by praetoriaen on 11/9/14.
  */
 
-var logger = require("../libs/logger");
+var Logger = require("../libs/logger");
 
 describe("Logger", function() {
-    describe("#logInto(Mutate mutate, string connectionToDB)", function() {
+    describe("#logInto(string, string)", function() {
         it("Should log the object into the database", function() {
-            var mutate = "{ a: \"abc\" }";
+            var dataToLog = "{ a: \"abc\" }";
             var connectionToDB = "connectionString";
-            var testLogger = new logger();
+            var testLogger = new Logger(dataToLog, connectionToDB);
 
-            testLogger.logInto(mutate, connectionToDB).should.return(0);
+            testLogger.logInto().should.return(0);
         });
     });
 
     describe("#passThrough()", function() {
         it("Should do nothing", function() {
-            var testLogger = new logger();
+            var dataToLog = "{ a: \"abc\" }";
+            var connectionToDB = "connectionString";
+            var testLogger = new Logger(dataToLog, connectionToDB);
 
-            testLogger.logInto.should.return(0);
+            testLogger.passThrough().should.equal("{ a: \"abc\" }");
         });
     });
 });
