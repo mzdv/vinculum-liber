@@ -1,6 +1,6 @@
 {
-  "name": "elementum",
-  "description": "elementum.json test file",
+  "name": "elementum",                      // reimplementation incoming :)
+  "description": "elementum.json test file",// check your TO-DO list
   "elements": [
     {
       "callsign": "callsign1",
