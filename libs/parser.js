@@ -15,7 +15,7 @@ parser.prototype.getResourceList = function() {
 
 parser.prototype.setResourceList = function(parsedData) {
     this.resources = _.map(parsedData.elements, function(element) {
-        return element.callsign + '/' + element.port;
+        return element.callsign + '/' + element.location;
     });
 };
 

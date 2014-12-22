@@ -23,7 +23,7 @@ describe("Gatherer", function() {
 
             var testGatherer = new Gatherer();
 
-            testGatherer.testElementi(parser.getParsedData()).should.return(0);
+            testGatherer.testElementi(parser.getParsedData()).should.equal(0);
         });
         it("Should return the faulty interface and error code -1 if the interface isn't operational", function() {
             var parser = new Parser("elementum.json");
@@ -31,7 +31,7 @@ describe("Gatherer", function() {
 
             var testGatherer = new Gatherer();
 
-            testGatherer.testElementi(parser.getParsedData()).should.be(-1);
+            testGatherer.testElementi(parser.getParsedData()).should.equal(-1);
         });
         it("Should return 1 if the array of elementi is empty", function() {
             var parser = new Parser("elementumEmpty.json");
