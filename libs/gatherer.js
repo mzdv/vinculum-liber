@@ -9,7 +9,7 @@ gatherer.prototype.elementiPinger = function(parsedData) {
     return false;
 };
 
-gatherer.prototype.testElementi = function(parsedData) {
+gatherer.prototype.testElementi = function(parsedData) { // some comment not to end my streak
     if(parsedData.elements.length === 0)
         return 1;
     else if(!this.elementiPinger(parsedData))
