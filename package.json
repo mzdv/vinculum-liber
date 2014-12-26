@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "expect": "*"
+    "expect": "*",
+    "should": "*"
   }
 }
