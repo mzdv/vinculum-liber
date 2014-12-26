@@ -6,6 +6,9 @@ var Gatherer = require("../libs/gatherer");
 var Element = require("../libs/element");
 var Parser = require("../libs/parser");
 
+
+var should = require("should");
+
 describe("Gatherer", function() {
     describe("#gather(Array resources)", function() {
         it("Should return a continuous stream of data from resourceList", function() {

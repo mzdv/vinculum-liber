@@ -4,6 +4,8 @@
 
 var Logger = require("../libs/logger");
 
+var should = require("should");
+
 describe("Logger", function() {
     describe("#logInto(string, string)", function() {
         it("Should log the object into the database", function() {

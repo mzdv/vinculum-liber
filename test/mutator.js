@@ -4,6 +4,8 @@
 
 var Mutator = require("../libs/mutator");   //more thorough explanation in mutator.js about the general conception
 
+var should = require("should");
+
 describe("Mutator", function() {
     describe("#additionMutate(String, String, delimeter)", function() {
         it("Should mutate the given object by addition", function () {

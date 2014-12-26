@@ -3,6 +3,7 @@
  */
 
 var Parser = require("../libs/parser");
+var should = require("should");
 
 describe("Parser", function () {
     describe("#parse()", function () {

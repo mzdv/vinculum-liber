@@ -9,6 +9,8 @@ var gatherer = require("../libs/gatherer");
 var mutator = require("../libs/mutator");
 var logger = require("../libs/logger");
 
+var should = require("should");
+
 describe("Combiner", function() {
     describe("#combine(Parser parser, Gatherer Gatherer, Mutator mutator, Logger logger)", function() {
         it("Should return JSON which is an array of other JSONs", function() {
