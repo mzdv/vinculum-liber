@@ -4,7 +4,8 @@
   "description": "Resource monitoring in Node.js",
   "dependencies": {
     "express": "4.*.*",
-    "lodash": "*"
+    "lodash": "*",
+    "mongoose": "*"
   },
   "devDependencies": {
     "mocha": "*",

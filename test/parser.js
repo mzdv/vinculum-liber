@@ -22,7 +22,7 @@ describe("Parser", function () {
             var testParser = new Parser("elementum.json");
             testParser.parse();
 
-            testParser.getData().should.equal("{\n  \"name\": \"elementum\",\n  \"description\": \"elementum.json test file\",\n  \"elements\": [\n    {\n      \"callsign\": \"callsign1\",\n      \"location\": \"callsign1.js\"\n    },\n    {\n      \"callsign\": \"callsign2\",\n      \"location\": \"callsign2.js\"\n    },\n    {\n      \"callsign\": \"callsign3\",\n      \"location\": \"callsign3.js\"\n    }\n  ]\n}");
+            testParser.getData().should.eql("{\n  \"name\": \"elementum\",\n  \"description\": \"elementum.json test file\",\n  \"elements\": [\n    {\n      \"callsign\": \"callsign1\",\n      \"location\": \"callsign1.js\"\n    },\n    {\n      \"callsign\": \"callsign2\",\n      \"location\": \"callsign2.js\"\n    },\n    {\n      \"callsign\": \"callsign3\",\n      \"location\": \"callsign3.js\"\n    }\n  ]\n}");
         });
         it("Should return the parsed data from elementum.json", function () {
             var testParser = new Parser("elementum.json");
@@ -37,7 +37,7 @@ describe("Parser", function () {
             var testParser = new Parser("elementum.json");
             testParser.parse();
 
-            testParser.getResourceList().should.equal([
+            testParser.getResourceList().should.eql([
                 "callsign1/callsign1.js",
                 "callsign2/callsign2.js",
                 "callsign3/callsign3.js"
