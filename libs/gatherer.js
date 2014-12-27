@@ -1,8 +1,8 @@
 /**
  * Created by praetoriaen on 11/9/14.
  */
-//var http = require("http");
-//var _ = require("lodash");
+var http = require("http");
+var _ = require("lodash");
 
 var gatherer = function Gatherer(){};
 
@@ -36,5 +36,42 @@ var gatherer = function Gatherer(){};
 //    else
 //        return -1;
 //};
+
+
+gatherer.prototype.gather = function(resourceList) {    // JSON refactoring could be beneficial here
+    var callsigns = [];
+
+    for(var i = 0; i < resourceList.length; i++) {
+        var splitResources = resourceList[i].split('/');
+        callsigns.push(splitResources[i]);
+    }
+
+    http.createServer(function(req, res) {
+        var parsedRequest = JSON.parse(req.body);
+
+        var i = 0;
+
+        while(true) {
+            for(i; i < callsign.length; i++) {
+
+                var response = {
+                    callsign: '',
+                    data: '',
+                    time: ''
+                };
+
+                if(_.isEqual(parsedRequest.callsign, callsigns[i])) {
+                    response.callsign = parsedRequest.callsign;
+                    response.data = parsedRequest.data;
+                    response.time = Date().toJSON;
+
+                    res.write(JSON.stringify(response));
+                }
+            }
+
+            i = 0;
+        }
+    });
+};
 
 module.exports = gatherer;

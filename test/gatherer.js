@@ -13,11 +13,11 @@ describe("Gatherer", function() {
             var parser = new Parser("elementum.json");
             parser.parse();
 
-            testGatherer.gather(parser.getResourceList()).should.be.type(Object);
+            testGatherer.gather(parser.getResourceList()).should.be.type(String);
         });
     });
     //describe("#testElementi(Array resources)", function() {                   // check garherer.js to see why this is commented out
-    //    it("Should return 0 if all elementi are operational", function() {
+    //    it("Should return 0 if all elementi are operational", function() {    // just the right way to try out branches
     //        var parser = new Parser("elementum.json");
     //        parser.parse();
     //
