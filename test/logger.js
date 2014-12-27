@@ -4,26 +4,23 @@
 
 var Logger = require("../libs/logger");
 
-var should = require("should");
-
 describe("Logger", function() {
-    describe("#logInto(string, string)", function() {
-        it("Should log the object into the database", function() {
-            var dataToLog = "{ a: \"abc\" }";
-            var connectionToDB = "connectionString";
-            var testLogger = new Logger(dataToLog, connectionToDB);
+    describe("#logInto(string)", function() {
+        it("Should log the string into the database", function() {
+            var dataToLog = "Some cool data";
 
-            testLogger.logInto().should.return(0);
+            var testLogger = new Logger();
+
+            testLogger.logInto(dataToLog).should.equal("Some cool data");
         });
     });
 
     describe("#passThrough()", function() {
         it("Should do nothing", function() {
-            var dataToLog = "{ a: \"abc\" }";
-            var connectionToDB = "connectionString";
-            var testLogger = new Logger(dataToLog, connectionToDB);
+            var dataToLog = "Some cool data";
+            var testLogger = new Logger();
 
-            testLogger.passThrough().should.equal("{ a: \"abc\" }");
+            testLogger.passThrough(dataToLog).should.equal("Some cool data");
         });
     });
 });
