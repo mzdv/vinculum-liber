@@ -17,7 +17,7 @@ logger.prototype.passThrough = function(dataToLog) {
 };
 
 logger.prototype.logInto = function(dataToLog) {
-    mongoose.connect("mongodb://localhost/vinculum-liber");
+    mongoose.connect("mongodb://127.0.0.1/vinculum-liber");
 
     var db = mongoose.connection;
 
@@ -26,7 +26,7 @@ logger.prototype.logInto = function(dataToLog) {
         data: String
     });
 
-    var loggingModel = mongoose.model("Logs", loggingSchema);
+    var loggingModel = mongoose.model("logs", loggingSchema);
 
     db
         .on("open", function() {
@@ -43,7 +43,7 @@ logger.prototype.logInto = function(dataToLog) {
                     mongoose.connection.close();
                     return -1;
                 }
-            })
+            });
         })
         .on("error", console.error.bind(console, "Error in MongoDB: "));
 
