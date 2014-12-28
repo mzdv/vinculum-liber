@@ -5,7 +5,7 @@
   "dependencies": {
     "express": "4.*.*",
     "lodash": "*",
-    "mongoose": "*"
+    "mongodb": "*"
   },
   "devDependencies": {
     "mocha": "*",

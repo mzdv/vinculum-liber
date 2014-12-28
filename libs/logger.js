@@ -2,6 +2,7 @@
  * Created by praetoriaen on 11/10/14.
  */
 var mongoose = require("mongoose");
+
 var Schema = mongoose.Schema;
 
 
@@ -19,8 +20,6 @@ logger.prototype.passThrough = function(dataToLog) {
 logger.prototype.logInto = function(dataToLog) {
     mongoose.connect("mongodb://127.0.0.1/vinculum-liber");
 
-    var db = mongoose.connection;
-
     var loggingSchema = Schema({
         timestamp: String,
         data: String
@@ -28,8 +27,6 @@ logger.prototype.logInto = function(dataToLog) {
 
     var loggingModel = mongoose.model("logs", loggingSchema);
 
-    db
-        .on("open", function() {
             var date = new Date();
 
             var loggingObject = new loggingModel( {
@@ -44,8 +41,6 @@ logger.prototype.logInto = function(dataToLog) {
                     return -1;
                 }
             });
-        })
-        .on("error", console.error.bind(console, "Error in MongoDB: "));
 
         mongoose.connection.close();
 
