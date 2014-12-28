@@ -27,22 +27,22 @@ logger.prototype.logInto = function(dataToLog) {
 
     var loggingModel = mongoose.model("logs", loggingSchema);
 
-            var date = new Date();
+    var date = new Date();
 
-            var loggingObject = new loggingModel( {
-                timestamp: date.toJSON(),
-                data: dataToLog.toString()
-            });
+    var loggingObject = new loggingModel( {
+        timestamp: date.toJSON(),
+        data: dataToLog.toString()
+    });
 
-            loggingObject.save(function(err) {
-                if(err) {
-                    console.error(err);
-                    mongoose.connection.close();
-                    return -1;
-                }
-            });
+    loggingObject.save(function(err) {
+        if(err) {
+            console.error(err);
+            mongoose.connection.close();
+            return -1;
+        }
+    });
 
-        mongoose.connection.close();
+    mongoose.connection.close();
 
     return dataToLog;   // this here is a very bad monkey patch; I ought to fix it once.
 };
